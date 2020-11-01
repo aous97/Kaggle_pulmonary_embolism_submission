@@ -7,7 +7,6 @@ This repository contains the model (PENet) described in the paper *"PENet: A Sca
 0. [Introduction](#introduction)
 0. [Citation](#citation)
 0. [Results](#results)
-0. [Usage](#usage)
 
 ## Introduction
 
@@ -48,30 +47,3 @@ If you use these PENet in your research, please cite:
 
 Our results demonstrate robust and interpretable diagnosis including sustained cross-institutional AUROC performance on an external dataset. PENet also outperforms the current state-of-the-art 3D CNN models by a wide margin. Thus, this work supports that successful application of deep learning to the diagnosis of a difficult radiologic finding such as PE on volumetric imaging in CTPA is possible, and can generalize on data from an external institution despite that the external institution. Ultimately, clinical integration may aid in prioritizing positive studies by sorting CTPA studies for timely diagnosis of this important disease including in settings where radiological expertise is limited.
 
-## Usage
-
-#### Environment Setup 
-1. Please install [Anaconda](https://docs.conda.io/en/latest/miniconda.html) in order to create a Python environment.
-2. Clone this repo (from the command-line: `git clone git@github.com:marshuang80/PENet.git`).
-3. Create the environment: `conda env create -f environment.yml`.
-4. Activate the environment: `source activate ctpe`.
-
-#### Downlaod trained weights
-
-The checkpoints and weights for PENet are stored [here](https://stanfordmedicine.box.com/s/uql0ikebseltkkntiwl5rrn6zzuww6jt). 
-
-#### Training
-
-To re-train the model, please modify **dir_dir**, **ckpt_path** and **save_dir** in `train.sh` and run `sh train.sh`
-
-#### Testing
-
-To test the model, please modify **dir_dir**, **ckpt_path** and **results_dir** in `test.sh` and run `sh test.sh`
-
-#### Generate CAMs
-
-The script to generate CAMs using trained model is `get_cams.sh`. Please modify **dir_dir**, **ckpt_path** and **cam_dir**
-
-#### Testing on raw DICOM
-
-To predict probability of PE for a single study using raw DICOM files, please use `test_from_dicom.sh`. Remember to modify the relavent arguments.  
